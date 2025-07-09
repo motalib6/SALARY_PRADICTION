@@ -1,0 +1,129 @@
+# Employee Salary Predictor by SK MOTALIB
+
+## Overview
+
+This is a Streamlit-based web application that predicts employee salaries using machine learning models. The application generates synthetic employee data and provides an interactive interface for salary prediction based on various employee attributes such as experience, education, job title, location, and industry.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: Streamlit - chosen for rapid prototyping and easy deployment of ML applications
+- **UI Components**: Interactive forms, data visualizations, and real-time predictions
+- **Styling**: Custom CSS for enhanced user experience with a modern, clean interface
+- **Visualization**: Matplotlib, Seaborn, and Plotly for interactive charts and graphs
+
+### Backend Architecture
+- **Language**: Python 3.11
+- **ML Framework**: Scikit-learn for model training and prediction
+- **Data Processing**: Pandas and NumPy for data manipulation and numerical operations
+- **Model Types**: 
+  - Linear Regression (baseline model)
+  - Random Forest Regressor (ensemble method)
+  - Gradient Boosting Regressor (advanced ensemble)
+
+### Application Structure
+- **Modular Design**: Separated concerns across multiple Python modules
+- **Data Generation**: Synthetic data creation for demonstration purposes
+- **Model Training**: Automated training pipeline with cross-validation
+- **Prediction Service**: Real-time salary prediction interface
+
+## Key Components
+
+### 1. Data Generator (`data_generator.py`)
+- **Purpose**: Generates synthetic employee data for training and testing
+- **Features**: Creates realistic employee profiles with various job titles, education levels, locations, and industries
+- **Rationale**: Provides consistent, reproducible data for demonstration without privacy concerns
+
+### 2. Model Trainer (`model_trainer.py`)
+- **Purpose**: Handles data preprocessing and model training
+- **Features**: 
+  - Data preprocessing with label encoding and scaling
+  - Multiple ML model training and evaluation
+  - Cross-validation for model performance assessment
+- **Rationale**: Centralizes ML pipeline logic for maintainability and reusability
+
+### 3. Predictor (`predictor.py`)
+- **Purpose**: Handles real-time salary predictions
+- **Features**: Input preprocessing, model inference, and result formatting
+- **Rationale**: Separates prediction logic from training for better code organization
+
+### 4. Main Application (`app.py`)
+- **Purpose**: Streamlit web interface and application orchestration
+- **Features**: Interactive UI, data visualization, and model performance display
+- **Rationale**: Provides user-friendly interface for non-technical users
+
+## Data Flow
+
+1. **Data Generation**: Synthetic employee data is generated with realistic salary distributions
+2. **Data Preprocessing**: Categorical variables are encoded, numerical features are scaled
+3. **Model Training**: Multiple models are trained and evaluated using cross-validation
+4. **Model Selection**: Best performing model is selected based on evaluation metrics
+5. **Prediction**: User inputs are processed and fed to the trained model
+6. **Result Display**: Predictions are presented with confidence intervals and visualizations
+
+## External Dependencies
+
+### Core Libraries
+- **Streamlit**: Web application framework
+- **Scikit-learn**: Machine learning library
+- **Pandas**: Data manipulation and analysis
+- **NumPy**: Numerical computing
+- **Matplotlib/Seaborn/Plotly**: Data visualization
+
+### System Dependencies (via Nix)
+- **Python 3.11**: Runtime environment
+- **Cairo/Ghostscript**: Graphics rendering support
+- **GTK3**: GUI toolkit support
+- **FFmpeg**: Media processing capabilities
+
+## Deployment Strategy
+
+### Platform
+- **Replit**: Cloud-based development and deployment platform
+- **Autoscale**: Automatic scaling based on demand
+
+### Configuration
+- **Port**: 5000 (configured for Streamlit server)
+- **Headless Mode**: Enabled for server deployment
+- **Address**: 0.0.0.0 for external access
+
+### Workflow
+- **Parallel Execution**: Supports concurrent task execution
+- **Hot Reload**: Automatic restart on code changes
+- **Port Forwarding**: Automatic port configuration for web access
+
+## Changelog
+
+- June 27, 2025. Initial setup
+- June 27, 2025. Added comprehensive 3D visualization features including:
+  - 3D salary surface modeling with interactive feature selection
+  - Interactive 3D scatter plots with customizable axes and color coding
+  - Model decision boundaries visualization in 3D space
+  - Feature space explorer with PCA analysis and custom feature combinations
+  - Prediction confidence visualization with 3D confidence intervals
+- June 27, 2025. Integrated PostgreSQL database with full CRUD operations:
+  - Employee data storage and retrieval from PostgreSQL database
+  - Database management interface with filtering and analytics
+  - CRUD operations (Create, Read, Update, Delete) for employee records
+  - Real-time database statistics and table structure viewing
+  - Data export capabilities and database maintenance tools
+- June 27, 2025. Enhanced Global Salary Prediction System:
+  - Comprehensive global location data covering 10 major countries with states/provinces and cities
+  - 200+ job titles based on 2030 employment projections from World Economic Forum and BLS data
+  - 100+ worldwide industries covering all global sectors and emerging fields
+  - Enhanced prediction interface with hierarchical location selection (Country → State → City)
+  - Global profile summary with career level indicators and ranking system
+  - Intelligent data mapping between global inputs and database categories
+  - Fixed PostgreSQL connection issues and improved error handling
+- June 27, 2025. Application Rebranding and Multi-Currency Support:
+  - Renamed application from "AI Employee Salary Predictor" to "Employee Salary Predictor by SK MOTALIB"
+  - Added comprehensive multi-currency support with 20 global currencies including INR
+  - Real-time currency conversion with authentic exchange rates (1 USD = 85.56 INR)
+  - Multi-currency display showing simultaneous conversions in major currencies
+  - Enhanced Indian location data with Odisha state and Bhubaneswar city
+  - Added additional Indian states: West Bengal, Uttar Pradesh, Haryana, Punjab, Madhya Pradesh
+  - Fixed database timestamp serialization issues for improved data display
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
